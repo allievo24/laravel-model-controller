@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\movie;
 
 class Homecontroller extends Controller
 {
   public function index(){
     return view('Homepage');
   }
+ 
   public function listafilm(){
-    return view('Listafilm');
+    $Movies= Movie::all();
+   
+    return view('Listafilm',['Movies' => $Movies]);
   }
     
 }
